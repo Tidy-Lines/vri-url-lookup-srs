@@ -1,0 +1,22 @@
+[
+    {
+        "resort": "Vail",
+        "domain": "vail.com"
+    },
+    {
+        "resort": "Breckenridge",
+        "domain": "breckenridge.com"
+    },
+    {
+        "resort": "Keystone",
+        "domain": "keystoneresort.com"
+    },
+    {
+        "resort": "Crested Butte",
+        "domain": "skicb.com"
+    },
+    {
+        "resort": "Beaver Creek",
+        "domain": "beavercreek.com"
+    }
+]

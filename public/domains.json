@@ -1,22 +1,212 @@
 [
     {
-        "resort": "Vail",
-        "domain": "vail.com"
-    },
-    {
-        "resort": "Breckenridge",
-        "domain": "breckenridge.com"
-    },
-    {
-        "resort": "Keystone",
-        "domain": "keystoneresort.com"
-    },
-    {
-        "resort": "Crested Butte",
-        "domain": "skicb.com"
-    },
-    {
+        "id": 1,
         "resort": "Beaver Creek",
-        "domain": "beavercreek.com"
+        "domain": "beavercreek.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 2,
+        "resort": "Breckenridge",
+        "domain": "breckenridge.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 3,
+        "resort": "Crested Butte",
+        "domain": "skicb.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 4,
+        "resort": "Heavenly",
+        "domain": "skiheavenly.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 5,
+        "resort": "Hunter",
+        "domain": "huntermtn.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 6,
+        "resort": "Keystone",
+        "domain": "keystoneresort.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 7,
+        "resort": "Kirkwood",
+        "domain": "kirkwood.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 8,
+        "resort": "Mount Snow",
+        "domain": "mountsnow.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 9,
+        "resort": "Mt Sunapee",
+        "domain": "mountsunapee.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 10,
+        "resort": "Northstar",
+        "domain": "northstarcalifornia.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 11,
+        "resort": "Okemo",
+        "domain": "okemo.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 12,
+        "resort": "Park City",
+        "domain": "parkcitymountain.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 13,
+        "resort": "Stevens Pass",
+        "domain": "stevenspass.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 14,
+        "resort": "Stowe",
+        "domain": "stowe.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 15,
+        "resort": "Vail",
+        "domain": "vail.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 16,
+        "resort": "Whistler Blackcomb",
+        "domain": "whistlerblackcomb.com",
+        "group": "16MTN"
+    },
+    {
+        "id": 17,
+        "resort": "Afton Alps",
+        "domain": "aftonalps.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 18,
+        "resort": "Alpine Valley",
+        "domain": "alpinevalleyohio.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 19,
+        "resort": "Attitash",
+        "domain": "attitash.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 20,
+        "resort": "BMBW",
+        "domain": "bmbw.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 21,
+        "resort": "Crotched",
+        "domain": "crotchedmtn.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 22,
+        "resort": "Hidden Valley, MO",
+        "domain": "hiddenvalleyski.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 23,
+        "resort": "Hidden Valley, PA",
+        "domain": "hiddenvalleyresort.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 24,
+        "resort": "JFBB",
+        "domain": "jfbb.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 25,
+        "resort": "Laurel Mtn",
+        "domain": "laurelmountainski.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 26,
+        "resort": "Liberty",
+        "domain": "libertymountainresort.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 27,
+        "resort": "Mad River",
+        "domain": "skimadriver.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 28,
+        "resort": "Mt Brighton",
+        "domain": "mtbrighton.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 29,
+        "resort": "Paoli Peaks",
+        "domain": "paolipeaks.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 30,
+        "resort": "Roundtop",
+        "domain": "skiroundtop.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 31,
+        "resort": "Seven Springs",
+        "domain": "7springs.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 32,
+        "resort": "Snow Creek",
+        "domain": "skisnowcreek.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 33,
+        "resort": "Whitetail",
+        "domain": "skiwhitetail.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 34,
+        "resort": "Wildcat",
+        "domain": "skiwildcat.com",
+        "group": "21MTN"
+    },
+    {
+        "id": 35,
+        "resort": "Wilmot",
+        "domain": "wilmotmountain.com",
+        "group": "21MTN"
     }
 ]

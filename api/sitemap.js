@@ -1,5 +1,6 @@
 import { XMLParser } from 'fast-xml-parser';
 import { maybeEnforceApiKey } from '../lib/edge/auth.js';
+import { enforceFetchPassword } from '../lib/edge/auth.js';
 import {
   extractUrlEntries,
   normalizeUrl,
@@ -11,6 +12,9 @@ import { loadCoreFragments, categorizeByCore } from '../lib/edge/coreCatalog.js'
 export const config = { runtime: 'edge' };
 
 export default async function handler(req) {
+  const passwordAuth = enforceFetchPassword(req);
+  if (passwordAuth) return passwordAuth;
+
   const auth = maybeEnforceApiKey(req);
   if (auth) return auth;
 

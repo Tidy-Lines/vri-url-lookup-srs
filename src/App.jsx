@@ -4,6 +4,7 @@ import './index.css';
 import DownloadCSV from './components/DownloadCSV.jsx';
 
 const STORAGE_KEY = 'vri-selected-resort-ids:v1';
+const FETCH_PASSWORD_STORAGE_KEY = 'vri-fetch-password:v1';
 
 export default function App() {
   const [domains, setDomains] = useState([]);                 // [{ id, resort, domain }]
@@ -95,17 +96,73 @@ export default function App() {
     [domains, selectedIds]
   );
 
+  const getPasswordFromStorage = () => {
+    try {
+      return localStorage.getItem(FETCH_PASSWORD_STORAGE_KEY) || '';
+    } catch {
+      return '';
+    }
+  };
+
+  const savePasswordToStorage = (password) => {
+    try {
+      localStorage.setItem(FETCH_PASSWORD_STORAGE_KEY, password);
+    } catch { }
+  };
+
+  const clearPasswordFromStorage = () => {
+    try {
+      localStorage.removeItem(FETCH_PASSWORD_STORAGE_KEY);
+    } catch { }
+  };
+
+  const requestPassword = () => {
+    const entered = window.prompt('Enter access password to fetch sitemap data:');
+    if (entered === null) return null;
+
+    const trimmed = entered.trim();
+    if (!trimmed) {
+      setError('Password is required to fetch sitemap data.');
+      return null;
+    }
+
+    savePasswordToStorage(trimmed);
+    return trimmed;
+  };
+
   const fetchSelectedSitemaps = async () => {
     if (selectedItems.length === 0) return;
     try {
       setError('');
       setLoading(true);
 
-      const res = await fetch('/api/sitemaps', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items: selectedItems })
-      });
+      const postSitemaps = (password) => {
+        return fetch('/api/sitemaps', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-fetch-password': password
+          },
+          body: JSON.stringify({ items: selectedItems })
+        });
+      };
+
+      let password = getPasswordFromStorage();
+      if (!password) {
+        password = requestPassword();
+        if (!password) return;
+      }
+
+      let res = await postSitemaps(password);
+
+      if (res.status === 401) {
+        clearPasswordFromStorage();
+        const replacement = requestPassword();
+        if (!replacement) {
+          throw new Error('Unauthorized. Password was rejected.');
+        }
+        res = await postSitemaps(replacement);
+      }
 
       if (!res.ok) {
         const txt = await res.text();
@@ -123,7 +180,7 @@ export default function App() {
       setResults(map);
     } catch (e) {
       console.error('Fetch error:', e);
-      setError('Failed to fetch selected sitemaps');
+      setError(e?.message || 'Failed to fetch selected sitemaps');
     } finally {
       setLoading(false);
     }

@@ -14,3 +14,11 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Environment Variable
+
+Set the following environment variable for the API routes:
+
+- `FETCH_PASSWORD`: Required password for `/api/sitemap` and `/api/sitemaps`.
+
+The frontend prompts for this password on `Fetch Selected`, sends it as the `x-fetch-password` header, and stores it in `localStorage` for reuse.
